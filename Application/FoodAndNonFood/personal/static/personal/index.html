@@ -3,6 +3,20 @@
 
  <head>
 
+ 
+         <script type="text/javascript">
+            $(function () {
+                $('#datetimepicker5').datetimepicker({
+                    defaultDate: "11/1/2013",
+                    disabledDates: [
+                        moment("12/25/2013"),
+                        new Date(2013, 11 - 1, 21),
+                        "11/22/2013 00:53"
+                    ]
+                });
+            });
+        </script>
+		
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -65,28 +79,52 @@
 		                    			<span class="label-text">Item type:</span> 
 		                    			<span class="contact-error"></span>
 		                    		</label>
-		                        	<input type="text" name="name" placeholder="Item..." class="c-form-name form-control" id="c-form-name">
+		                    
 		                        </div>
+								<div class="dropdown">
+										<button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Choose item:
+										<span class="caret"></span></button>
+										<ul class="dropdown-menu">
+										  <li><a href="#">Food</a></li>
+										  <li><a href="#">Utensils</a></li>
+										  <li><a href="#">Medicine</a></li>
+										</ul>
+							     </div>
+								 <br>
 		                    	<div class="form-group">
 		                    		<label for="c-form-email">
 		                    			<span class="label-text">Quantity:</span> 
 		                    			<span class="contact-error"></span>
 		                    		</label>
-		                        	<input type="text" name="email" placeholder="Quantity..." class="c-form-email form-control" id="c-form-email">
+		                        	<input type="text" name="email" placeholder="Enter the quantity" class="c-form-email form-control" id="c-form-email">
 		                        </div>
+								<br>
 		                        <div class="form-group">
 		                        	<label for="c-form-subject">
 		                    			<span class="label-text">Date Needed:</span> 
 		                    			<span class="contact-error"></span>
 		                    		</label>
-		                        	<input type="text" name="subject" placeholder="Message subject..." class="c-form-subject form-control" id="c-form-subject">
+									
+									<div class="row">
+										<div class='col-sm-6'>
+											<div class="form-group">
+												<div class='input-group date' id='datetimepicker5'>
+													<input type='text' class="form-control" />
+													<span class="input-group-addon">
+														<span class="glyphicon glyphicon-calendar"></span>
+													</span>
+												</div>
+											</div>
+										</div>
+									</div>		                        
 		                        </div>
+								
 		                        <div class="form-group">
 		                        	<label for="c-form-message">
 		                    			<span class="label-text">Location:</span> 
 		                    			<span class="contact-error"></span>
 		                    		</label>
-		                        	<textarea name="message" placeholder="Message text..." class="c-form-message form-control" id="c-form-message"></textarea>
+		                        	<textarea name="message" placeholder="Enter the address" class="c-form-message form-control" id="c-form-message"></textarea>
 		                        </div>
 		                        <button type="submit" class="btn">Send Request</button>
 		                    </form>
