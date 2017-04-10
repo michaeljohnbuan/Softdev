@@ -8,7 +8,7 @@
     <meta name="author" content="">
     <link rel="shortcut icon" href="assets/ico/favicon.ico">
 
-    <title>Food & Non-Food</title>
+    <title>Food & Other Essensials</title>
 
     <!-- Bootstrap core CSS -->
     <link href="assets/css/bootstrap.css" rel="stylesheet">
@@ -42,7 +42,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="/index">Food & Non-Food.</a>
+          <a class="navbar-brand" href="/index">Food & Other Essensials.</a>
         </div>
         <div class="navbar-collapse collapse navbar-right">
           <ul class="nav navbar-nav">
@@ -50,14 +50,18 @@
 			<li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">Features <b class="caret"></b></a>
               <ul class="dropdown-menu">
-                <li><a href="/request_food">Request</a></li>
-                <li><a href="/single_post">Access Map</a></li>
-                <li><a href="/search_alternatives">Search Alternatives</a></li>
+                <li><a href="/requestForm">Request</a></li>
+                <li><a href="/accessMap">Access Map</a></li>
+                <li><a href="/searchalternative">Search Alternatives</a></li>
                 <li><a href="/search_procedures">Search Emergency Procedures</a></li>
+                <li><a href="/agegroups">View Age Groups</a></li>
+                <li><a href="/viewrequest">View Requests</a></li>
               </ul>
             </li>
+            
             <li><a href="/about">ABOUT</a></li>
-            <li class="active"><a href="/contact">CONTACT</a></li>
+            <li><a href="/contact">CONTACT</a></li>
+            
             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                                     {{ Auth::user()->name }} <span class="caret"></span>
@@ -144,7 +148,7 @@
 		 					   rp.dulitin@gmail.com<br/>
 		 					   cs.carlos@gmail.com<br/>
 		 				<br/>	   
-		 				Tel:   <br/>
+		 				Cell#:   <br/>
 		 				     097-700-79646<br/>
 		 					 097-583-78796<br/>
 		 					 093-675-37331

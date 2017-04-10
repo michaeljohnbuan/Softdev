@@ -33,7 +33,7 @@ function filterTable($query)
     </head>
     <body>
         
-        <form class="searchbox_1" action="<?php echo e(action('customController@search_alternatives')); ?>" method="post">
+        <form class="searchbox_1" action="/search_alternatives" method="post">
             <input type="text" name="valueToSearch" placeholder="Alternative to search..."><br><br>
 			<input type="submit" name="search" value="Filter"><br><br>
             

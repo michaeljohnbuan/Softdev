@@ -9,7 +9,7 @@
     <link rel="shortcut icon" href="assets/ico/favicon.ico">
     
 
-    <title>Food and Non-Food</title>
+    <title>Food & Other Essensials</title>
 
     <!-- Bootstrap core CSS -->
     <link href="assets/css/bootstrap.css" rel="stylesheet">
@@ -53,7 +53,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="/index">Food & Non-Food.</a>
+          <a class="navbar-brand" href="/index">Food & Other Essensials.</a>
         </div>
         <div class="navbar-collapse collapse navbar-right">
           <ul class="nav navbar-nav">
@@ -61,16 +61,18 @@
 			<li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">Features <b class="caret"></b></a>
               <ul class="dropdown-menu">
-                <li><a href="/request_food">Request</a></li>
-                <li><a href="/single_post">Access Map</a></li>
-                <li><a href="/search_alternatives">Search Alternatives</a></li>
+                <li><a href="/requestForm">Request</a></li>
+                <li><a href="/accessMap">Access Map</a></li>
+                <li><a href="/searchalternative">Search Alternatives</a></li>
                 <li><a href="/search_procedures">Search Emergency Procedures</a></li>
-
+                <li><a href="/agegroups">View Age Groups</a></li>
+                <li><a href="/viewrequest">View Requests</a></li>
                 
 
 
               </ul>
             </li>
+            <li><a href="/about">MY REQUEST</a></li>
             <li><a href="/about">ABOUT</a></li>
             <li><a href="/contact">CONTACT</a></li>
             <li class="dropdown">
@@ -107,7 +109,7 @@
 			<div class="row">
 				<div class="col-lg-8 col-lg-offset-2">
 					<h3>Welcome to</h3>
-					<h1>Food And Non-Food Disaster Response Application</h1>
+					<h1>Food & Other Essensials Disaster Response Application</h1>
 								
 				</div>
 				
@@ -126,7 +128,7 @@
                     <!-- Wrapper for slides -->
                     <div class="carousel-inner" role="listbox">
                       <div class="item active">
-                        <img src="assets/img/relief1.jpeg" alt="Chania" width="460" height="345">
+                        <img src="assets/img/relief1.jpg" alt="Chania" width="460" height="345">
                       </div>
 
                       <div class="item">

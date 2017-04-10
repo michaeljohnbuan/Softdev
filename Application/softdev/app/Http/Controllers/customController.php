@@ -46,12 +46,31 @@ class customController extends BaseController
 
 	function search_alternatives()
 	{
-		return view('search_alternativesz');
+		return view('search_alternatives');
 	}
 
 	function search_procedures()
 	{
 		return view('search_procedures');
+	}
+
+	function firstProcedure()
+	{
+		return view('firstProcedure');
+	}
+
+	function secondProcedure()
+	{
+		return view('secondProcedure');
+	}
+	function thirdProcedure()
+	{
+		return view('thirdProcedure');
+	}
+
+	function listofrequest()
+	{
+		return view('listofrequest');
 	}
 }
 

@@ -8,7 +8,7 @@
     <meta name="author" content="">
     <link rel="shortcut icon" href="assets/ico/favicon.ico">
 
-    <title>Food & Non-Food</title>
+    <title>Food & Other Essensials</title>
 
     <!-- Bootstrap core CSS -->
     <link href="assets/css/bootstrap.css" rel="stylesheet">
@@ -32,33 +32,19 @@
 
   <body>
 
+  	<?php
 
+	    $db_host='localhost';
+		$db_username='root';
+		$db_password='';
+		$db_name='foodnonfood';
+		$db_connect = mysqli_connect($db_host, $db_username, $db_password, $db_name) or die(mysqli_error());
 
-  <?php
+		
+		$result = mysqli_query($db_connect, "SELECT * FROM searchprocedures WHERE id IN (1, 2, 3)");
+		
 
-			if(isset($_POST['search']))
-			{
-			    $valueToSearch = $_POST['valueToSearch'];
-			    // search in all table columns
-			    // using concat mysql function
-			    $query = "SELECT * FROM `searchprocedures` WHERE CONCAT(`first_procedures`, `second_procedures`, `third_procedures`, `fourth_procedures`) LIKE '%".$valueToSearch."%'";
-			    $search_result = filterTable($query);
-			    
-			}
-			 else {
-			    $query = "SELECT * FROM `searchprocedures`";
-			    $search_result = filterTable($query);
-			}
-
-			// function to connect and execute the query
-			function filterTable($query)
-			{
-			    $connect = mysqli_connect("localhost", "root", "", "foodnonfood");
-			    $filter_Result = mysqli_query($connect, $query);
-			    return $filter_Result;
-			}
-
-			?>
+	?>
 
 
     <!-- Fixed navbar -->
@@ -71,7 +57,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="/index">Food & Non-Food.</a>
+          <a class="navbar-brand" href="/index">Food & Other Essensials.</a>
         </div>
         <div class="navbar-collapse collapse navbar-right">
           <ul class="nav navbar-nav">
@@ -79,14 +65,18 @@
 			<li class="dropdown active">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">Features <b class="caret"></b></a>
               <ul class="dropdown-menu">
-                <li><a href="/request_food">Request</a></li>
+                <li><a href="/requestForm">Request</a></li>
                 <li><a href="/single_post">Access Map</a></li>
-                <li><a href="/search_alternatives">Search Alternatives</a></li>
-                <li><a href="/single_project">Search Emergency Procedures</a></li>
+                <li><a href="/searchalternative">Search Alternatives</a></li>
+                <li><a href="/search_procedures">Search Emergency Procedures</a></li>
+                <li><a href="/agegroups">View Age Groups</a></li>
+                <li><a href="/viewrequest">View Requests</a></li>
               </ul>
             </li>
+            
             <li><a href="/about">ABOUT</a></li>
             <li><a href="/contact">CONTACT</a></li>
+            
           </ul>
         </div><!--/.nav-collapse -->
       </div>
@@ -106,17 +96,19 @@
 
 	 <div id="portfoliowrap">
         <div class="portfolio-centered">
-        	<font color="red"><h3>List of Emergency Procedures</h3></font>
+        	<font color="red"><h1>List of Emergency Procedures</h1></font>
 
-            	 <?php while($row = mysqli_fetch_array($search_result)):?>
-               
-                    <h2><a href="/index" target="_self"><?php echo $row['first_procedures'];?><br></a>
-					<?php echo $row['second_procedures'];?><br>
-					<?php echo $row['third_procedures'];?><br>
-					<?php echo $row['fourth_procedures'];?><br></h2>
-					
-                
-                <?php endwhile;?>
+            	 
+
+                <?php while($row = mysqli_fetch_assoc($result)):?> 
+				
+					<h3><a href="/firstProcedure" target="_self"><?php echo ($row['id'] == 1) ? $row['name'] : '';?></a></h1>
+					<h3><a href="/secondProcedure" target="_self"><?php echo ($row['id'] == 2) ? $row['name'] : '';?></a></h1>
+					<h3><a href="/thirdProcedure" target="_self"><?php echo ($row['id'] == 3) ? $row['name'] : '';?></a></h1>
+
+				
+		
+		 		<?php endwhile;?>
 
 
         </div><!-- portfolio container -->
