@@ -4,9 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Requests;
-use App\FoodRequest;
+use App\UtensilRequest;
 
-class ViewRequestController extends Controller
+class ViewRequestForUtensils extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,9 +15,8 @@ class ViewRequestController extends Controller
      */
     public function index()
     {
-         //show data
-        $viewrequests =  FoodRequest::all();
-        return view('viewrequest.index',['viewrequests' => $viewrequests]);
+        $viewrequestsforutensils =  UtensilRequest::all();
+        return view('viewrequestforutensils.index',['viewrequestsforutensils' => $viewrequestsforutensils]);
     }
 
     /**
@@ -27,7 +26,7 @@ class ViewRequestController extends Controller
      */
     public function create()
     {
-        return view('viewrequest.create');
+        return view('viewrequestforutensils.create');
     }
 
     /**
@@ -40,8 +39,7 @@ class ViewRequestController extends Controller
     {
         $this->validate($request,[
         'user_name'=> 'required',
-        'foodtype'=> 'required',
-        'foodlevel' => 'required',
+        'utensilsfor'=> 'required',
         'population' => 'required',
         'date' => 'required',
         'evac_name' => 'required',
@@ -49,17 +47,16 @@ class ViewRequestController extends Controller
         'status' => 'required',
       ]);
        // create new data
-        $viewrequest = new viewrequest;
-        $viewrequest->user_name = $request->user_name;
-        $viewrequest->foodtype = $request->foodtype;
-        $viewrequest->foodlevel = $request->foodlevel;
-        $viewrequest->population = $request->population;
-        $viewrequest->date = $request->date;
-        $viewrequest->evac_name = $request->evac_name;
-        $viewrequest->address = $request->address;
-        $viewrequest->status = $request->status;
-        $viewrequest->save();
-        return redirect()->route('viewrequest.index')->with('alert-success','Data has been saved!');
+        $viewrequestforutensils = new viewrequestforutensils;
+        $viewrequestforutensils->user_name = $request->user_name;
+        $viewrequestforutensils->utensilsfor = $request->utensilsfor;
+        $viewrequestforutensils->population = $request->population;
+        $viewrequestforutensils->date = $request->date;
+        $viewrequestforutensils->evac_name = $request->evac_name;
+        $viewrequestforutensils->address = $request->address;
+        $viewrequestforutensils->status = $request->status;
+        $viewrequestforutensils->save();
+        return redirect()->route('viewrequestforutensils.index')->with('alert-success','Data has been saved!');
 
     }
 
@@ -71,7 +68,7 @@ class ViewRequestController extends Controller
      */
     public function show($id)
     {
-        
+        //
     }
 
     /**
@@ -82,9 +79,9 @@ class ViewRequestController extends Controller
      */
     public function edit($id)
     {
-        $viewrequest = FoodRequest::findOrFail($id);
+         $viewrequestforutensils = UtensilRequest::findOrFail($id);
         // return to the edit views
-        return view('viewrequest.edit',compact('viewrequest'));
+        return view('viewrequestforutensils.edit',compact('viewrequestforutensils'));
     }
 
     /**
@@ -96,16 +93,15 @@ class ViewRequestController extends Controller
      */
     public function update(Request $request, $id)
     {
-        // validation
-        $this->validate($request,[
+         $this->validate($request,[
         
         'status' => 'required',
         ]);
-        $viewrequest = FoodRequest::findOrFail($id);
-        $viewrequest->status = $request->status;
-        $viewrequest->save();
+        $viewrequestforutensils = UtensilRequest::findOrFail($id);
+        $viewrequestforutensils->status = $request->status;
+        $viewrequestforutensils->save();
 
-        return redirect()->route('viewrequest.index')->with('alert-success','Data has been saved!');
+        return redirect()->route('viewrequestforutensils.index')->with('alert-success','Data has been saved!');
     }
 
     /**
@@ -116,8 +112,8 @@ class ViewRequestController extends Controller
      */
     public function destroy($id)
     {
-        $viewrequest = FoodRequest::findOrFail($id);
-        $viewrequest->delete();
-        return redirect()->route('viewrequest.index')->with('alert-success','Data has been saved!');
+        $viewrequestforutensils = UtensilRequest::findOrFail($id);
+        $viewrequestforutensils->delete();
+        return redirect()->route('viewrequestforutensils.index')->with('alert-success','Data has been saved!');
     }
 }

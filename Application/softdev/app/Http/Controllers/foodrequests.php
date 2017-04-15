@@ -56,7 +56,7 @@ class foodrequests extends Controller
         $food_request->address = $request->address;
         $food_request->status = $request->status;
         $food_request->save();
-            
+        return redirect()->route('viewrequest.index')->with('alert-success','Data has been saved!');
 
     }
 

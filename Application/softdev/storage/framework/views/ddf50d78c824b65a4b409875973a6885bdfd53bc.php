@@ -12,6 +12,11 @@
 					<?php echo e(csrf_field()); ?>
 
 					<div class="form-group"> 
+						<label for="evac_name">Evacuation Center:
+						</label>
+						<input type="text" name="evac_name" class="form-control">
+					</div>
+					<div class="form-group"> 
 						<label for="toddler_kid">Toddlers and kids (11 yrs old and below):
 						</label>
 						<input type="number" name="toddler_kid" class="form-control">

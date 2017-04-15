@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>View Requests</title>
+    <title>View Request For Food</title>
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
     <!-- Bootstrap -->
     <link rel="stylesheet" href="{{ asset('assetsForSearchAlternatives/css/bootstrap.min.css') }}">
@@ -27,7 +27,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">Food & Other Essensials</a>
+          <a class="navbar-brand" href="/viewrequest">Food & Other Essensials</a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
@@ -37,12 +37,7 @@
             <li><a href="#"></a></li>
 
           </ul>
-          <form class="navbar-form navbar-left" role="search">
-            <div class="form-group">
-              <input type="text" class="form-control" placeholder="Search">
-            </div>
-            <button type="submit" class="btn btn-default">Submit</button>
-          </form>
+          
           <ul class="nav navbar-nav navbar-right">
             <li><a href="#"></a></li>
 

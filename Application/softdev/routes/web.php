@@ -51,6 +51,10 @@ Route::group(['middleware' => ['web']], function() {
   Route::resource('viewrequest','ViewRequestController');  
 });
 
+Route::group(['middleware' => ['web']], function() {
+  Route::resource('viewrequestforutensils','ViewRequestForUtensils');  
+});
+
 
 
 Route::resource('/agegroups','AgegroupsController');

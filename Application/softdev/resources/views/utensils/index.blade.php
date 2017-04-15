@@ -44,7 +44,7 @@
 							map:map,
 							draggable:true
 						})
-					   var stringvalue     =   'Latitude:<input name="latitude" type="text" value="'+ui.item.latitude+'" >Longitude:<input name="longtitude" type="text" value="'+ui.item.longitude+'">Address <input name="address" type="text"><br/>';
+					   var stringvalue     =   'Latitude:<input name="latitude" type="text" value="'+ui.item.latitude+'" >Longitude:<input name="longtitude" type="text" value="'+ui.item.longitude+'">Address <input name="address" type="text"><br><br>Status<select name="status"><option value="Pending"> Pending</option><option value="delivered"> Delivered</option></select><br/><br>';
 						$("#value").append(stringvalue);
 						marker.setPosition(location);
 						map.setCenter(location);
@@ -61,7 +61,8 @@
 <body onload="initialize()">
 
 <div id="main">
-<h1>Welcome </h1>
+<h1>Requester: <i><font color="blue">{{ Auth::user()->name }} </font></i> </h1>
+<p>Fill out fields to request</p>
 <div id="login">
 <h2>Utensil Request Form</h2>
 <hr/>
@@ -80,13 +81,6 @@
 		<label>Evacuation Center:</label>
 		<input type="text" name="evac_name" id="formEvac_name" required="required" placeholder="Please Enter Evacuation Center Name"/><br/><br />
 
-		<label>Status</label>
-			<select name="status">
-				<option value="Pending"> Pending</option>
-				<option value="delivered"> Delivered</option>
-			</select>
-		<br>
-		
 		<input type="hidden" name="_token" value="{{csrf_token()}}"><br/>
 		<label>Enter your city:</label>
 		<input type="text" placeholder="ex. Makati, Metro Manila, Philippines " id="autocomplete"><br>

@@ -38,6 +38,7 @@ class AgegroupsController extends Controller
         $agegroup = new Agegroup; 
         $agegroup->user_id = Auth::user()->id; 
         $agegroup->user_name = Auth::user()->name;
+        $agegroup->evac_name = $request->evac_name;
         $agegroup->toddler_kid = $request->toddler_kid; 
         $agegroup->teen = $request->teen; 
         $agegroup->older = $request->older; 
@@ -81,13 +82,15 @@ class AgegroupsController extends Controller
     public function update(Request $request, $id)
     {
         $this->validate($request, [
+            'evac_name' => 'required',
             'toddler_kid' => 'required',
             'teen' => 'required',
             'older' => 'required', 
             'seniorcitizen' => 'required',
             ]);
 
-        $agegroup = Agegroup::findOrFail($id);      
+        $agegroup = Agegroup::findOrFail($id); 
+        $agegroup->evac_name = $request->evac_name;      
         $agegroup->toddler_kid = $request->toddler_kid; 
         $agegroup->teen = $request->teen; 
         $agegroup->older = $request->older; 

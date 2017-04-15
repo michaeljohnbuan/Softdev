@@ -65,17 +65,20 @@
 			<li class="dropdown active">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">Features <b class="caret"></b></a>
               <ul class="dropdown-menu">
-                <li><a href="/requestForm">Request</a></li>
-                <li><a href="/single_post">Access Map</a></li>
+                <li><a href="/requestForm">Request for Food</a></li>
+                <li><a href="/requestFormForUtensils">Request for Utensils</a></li>
+                <li><a href="/accessMap">Access Map for Food</a></li>
+                <li><a href="/accessMapForUtensils">Access Map for Utensils</a></li>
                 <li><a href="/searchalternative">Search Alternatives</a></li>
-                <li><a href="/search_procedures">Search Emergency Procedures</a></li>
+                <li><a href="/search_procedures">Search Alternative Cooking Procedures</a></li>
                 <li><a href="/agegroups">View Age Groups</a></li>
-                <li><a href="/viewrequest">View Requests</a></li>
+                <li><a href="/viewrequest">View Request for Food</a></li>
+                <li><a href="/viewrequestforutensils">View Request for Utensils</a></li>
               </ul>
             </li>
             
             <li><a href="/about">ABOUT</a></li>
-            <li><a href="/contact">CONTACT</a></li>
+            
             
           </ul>
         </div><!--/.nav-collapse -->

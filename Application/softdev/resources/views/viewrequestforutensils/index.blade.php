@@ -2,7 +2,7 @@
   @section('content')
   <div class="row">
     <div class="col-md-12">
-      <h1>View Request for Food Here</h1>
+      <h1>View Request for Utensils Here</h1>
     </div>
   </div>
   <div class="row">
@@ -10,8 +10,7 @@
       <tr>
         <th>No.</th>
         <th>Name of Requester</th>
-        <th>Food Type</th>
-        <th>Food Level</th>
+        <th>Utensils For</th>
         <th>Population</th>
         <th>Date</th>
         <th>Evacuation Center Name</th>
@@ -20,25 +19,24 @@
         <th>Actions</th>
       </tr>
       {{--
-      <a href="{{route('viewrequest.create')}}" class="btn btn-info pull-right">Create New Data</a><br><br>
+      <a href="{{route('viewrequestforutensils.create')}}" class="btn btn-info pull-right">Create New Data</a><br><br>
       --}}
       <?php $no=1; ?>
-      @foreach($viewrequests as $viewrequest)
+      @foreach($viewrequestsforutensils as $viewrequestforutensils)
         <tr>
           <td>{{$no++}}</td>
-          <td>{{$viewrequest->user_name}}</td>
-          <td>{{$viewrequest->foodtype}}</td>
-          <td>{{$viewrequest->foodlevel}}</td>
-          <td>{{$viewrequest->population}}</td>
-          <td>{{$viewrequest->date}}</td>
-          <td>{{$viewrequest->evac_name}}</td>
-          <td>{{$viewrequest->address}}</td>
-          <td>{{$viewrequest->status}}</td>
+          <td>{{$viewrequestforutensils->user_name}}</td>
+          <td>{{$viewrequestforutensils->utensilsfor}}</td>
+          <td>{{$viewrequestforutensils->population}}</td>
+          <td>{{$viewrequestforutensils->date}}</td>
+          <td>{{$viewrequestforutensils->evac_name}}</td>
+          <td>{{$viewrequestforutensils->address}}</td>
+          <td>{{$viewrequestforutensils->status}}</td>
           <td>
-            <form class="" action="{{route('viewrequest.destroy',$viewrequest->id)}}" method="post">
+            <form class="" action="{{route('viewrequestforutensils.destroy',$viewrequestforutensils->id)}}" method="post">
               <input type="hidden" name="_method" value="Delete">
               <input type="hidden" name="_token" value="{{ csrf_token() }}">
-              <a href="{{route('viewrequest.edit',$viewrequest->id)}}" class="btn btn-primary">Change Status</a><br><br>
+              <a href="{{route('viewrequestforutensils.edit',$viewrequestforutensils->id)}}" class="btn btn-primary">Change Status</a><br><br>
               {{--<input type="submit" class="btn btn-danger" onclick="return confirm('Are you sure you want to cancel your request?');" name="name" value="Cancel">--}}
             </form>
           </td>

@@ -17,6 +17,7 @@ class CreateAgegroupsTable extends Migration
             $table->increments('id');
             $table->integer('user_id'); 
             $table->string('user_name'); 
+            $table->string('evac_name'); 
             $table->integer('toddler_kid'); 
             $table->integer('teen'); 
             $table->integer('older'); 

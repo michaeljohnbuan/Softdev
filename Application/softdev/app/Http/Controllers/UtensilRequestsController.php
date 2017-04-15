@@ -53,6 +53,7 @@ class UtensilRequestsController extends Controller
         $utensil_request->address = $request->address;
         $utensil_request->status = $request->status;
         $utensil_request->save();
+        return redirect()->route('viewrequestforutensils.index')->with('alert-success','Data has been saved!');
     }
 
     /**

@@ -54,10 +54,13 @@
                 <li><a href="/accessMap">Access Map</a></li>
                 <li><a href="/searchalternative">Search Alternatives</a></li>
                 <li><a href="/single_project">Search Emergency Procedures</a></li>
+                <li><a href="/agegroups">View Age Groups</a></li>
+                <li><a href="/viewrequest">View Requests</a></li>
               </ul>
             </li>
-            <li><a href="/agegroups">Age Groups</a></li>
+            
             <li><a href="/about">ABOUT</a></li>
+            
             
           </ul>
         </div><!--/.nav-collapse -->

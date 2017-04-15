@@ -61,10 +61,12 @@
 <body onload="initialize()">
 
 <div id="main">
-<h1>Welcome </h1>
+<h1>Requester: <i><font color="blue"><?php echo e(Auth::user()->name); ?> </font></i> </h1>
+<p>Fill out fields to request</p>
 <div id="login">
 <h2>Food Request Form</h2>
 <hr/>
+
 	<form method="post" action="/insert">
 
 		<label>Food Type:</label><br><br>
@@ -81,7 +83,7 @@
 		<label>Date Needed:</label>
 		<input type="date" name="date" id="formDate" required="required"/><br/><br />
 		
-		<label>Evacuation Center:</label>
+		<label>Evacuation Center Name:</label>
 		<input type="text" name="evac_name" id="formEvac_name" required="required" placeholder="Please Enter Evacuation Center Name"/><br/><br />
 
 		

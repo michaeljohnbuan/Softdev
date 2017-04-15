@@ -55,11 +55,12 @@
                 <li><a href="/searchalternative">Search Alternatives</a></li>
                 <li><a href="/search_procedures">Search Emergency Procedures</a></li>
                 <li><a href="/agegroups">View Age Groups</a></li>
+                <li><a href="/viewrequest">View Requests</a></li>
               </ul>
             </li>
             
             <li class="active"><a href="/about">ABOUT</a></li>
-            <li><a href="/contact">CONTACT</a></li>
+            
             
             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">

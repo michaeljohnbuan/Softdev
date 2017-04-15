@@ -1,4 +1,4 @@
-@extends('viewrequestmaster')
+@extends('viewrequestforutensilsmaster')
   @section('content')
   <div class="row">
     <div class="col-md-12">
@@ -6,11 +6,11 @@
     </div>
   </div>
   <div class="row">
-    <form class="" action="{{route('viewrequest.update',$viewrequest->id)}}" method="post">
+    <form class="" action="{{route('viewrequestforutensils.update',$viewrequestforutensils->id)}}" method="post">
       <input name="_method" type="hidden" value="PATCH">
       {{csrf_field()}}
       <div class="form-group{{ ($errors->has('status')) ? $errors->first('status') : '' }}">
-        <input type="text" name="status" class="form-control" placeholder="Enter Status Here" value="{{$viewrequest->status}}">
+        <input type="text" name="status" class="form-control" placeholder="Enter Status Here" value="{{$viewrequestforutensils->status}}">
         {!! $errors->first('status','<p class="help-block">:message</p>') !!}
       </div>
       <div class="form-group">

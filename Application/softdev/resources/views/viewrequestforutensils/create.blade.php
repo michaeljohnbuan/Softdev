@@ -1,4 +1,4 @@
-@extends('viewrequestmaster')
+@extends('viewrequestforutensilsmaster')
   @section('content')
   <div class="row">
     <div class="col-md-12">
@@ -13,13 +13,9 @@
           <input type="text" name="user_name" class="form-control" placeholder="Enter User Name Here">
           {!! $errors->first('user_name','<p class="help-block">:message</p>') !!}
         </div>
-        <div class="form-group{{ ($errors->has('foodtype')) ? $errors->first('foodtype') : '' }}">
-          <input type="text" name="foodtype" class="form-control" placeholder="Enter Food Type Here">
-          {!! $errors->first('foodtype','<p class="help-block">:message</p>') !!}
-        </div>
-        <div class="form-group{{ ($errors->has('foodlevel')) ? $errors->first('foodlevel') : '' }}">
-          <input type="text" name="foodlevel" class="form-control" placeholder="Enter Food Level Here">
-          {!! $errors->first('foodlevel','<p class="help-block">:message</p>') !!}
+        <div class="form-group{{ ($errors->has('utensilsfor')) ? $errors->first('utensilsfor') : '' }}">
+          <input type="text" name="utensilsfor" class="form-control" placeholder="Enter Utensils for Here">
+          {!! $errors->first('utensilsfor','<p class="help-block">:message</p>') !!}
         </div>
         <div class="form-group{{ ($errors->has('population')) ? $errors->first('population') : '' }}">
           <input type="text" name="population" class="form-control" placeholder="Enter Population Here">
